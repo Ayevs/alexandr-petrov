@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import "primereact/resources/themes/saga-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+import "primeflex/primeflex.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='shadow-6 border-round border-y-2 mt-6 mx-8 '>
+        <p className='text-2xl font-semibold font-semibold '>This site will be used as sort of a portfolio that will evolve overtime with more recent projects im working on</p>
+      </div>
     </div>
   );
 }
