@@ -1,14 +1,33 @@
-import './App.css';
-import "primereact/resources/themes/saga-blue/theme.css";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
-import "primeflex/primeflex.css";
+import "./App.css";
+import Navbar from "./Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <div className='shadow-6 border-round border-y-2 mt-6 mx-8 '>
-        <p className='text-2xl font-semibold font-semibold '>This site will be used as sort of a portfolio that will evolve overtime with more recent projects im working on</p>
+    <div>
+      <Navbar />
+      <div className="App-Div">
+        <h2>Welcome to my first website i've created for myself.</h2>
+        <p>
+          Im a soon to be 20 year old dev who has some experience in web dev/
+          object oriented programming and mobile development, as well as a
+          couple other things.
+        </p>
+        <p>
+          Im still working on developing this website, but due to my spontaneous
+          style of working it will probably take a bit
+        </p>
+        <p>
+          If you are curious or would like to keep in touch feel free to join my
+          discord server.
+        </p>
+        {/* <iframe
+          src="https://discord.com/widget?id=1198787717459349524&theme=dark"
+          width="350"
+          height="500"
+          allowtransparency="true"
+          frameborder="0"
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        ></iframe> */}
       </div>
     </div>
   );
