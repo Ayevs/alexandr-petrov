@@ -11,7 +11,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/alexandr-petrov" element={<App />} />
-      <Route path="/Projects" element={<Projects />} />
+      <Route path="/alexandr-petrov/Projects" element={<Projects />} />
     </Routes>
   </BrowserRouter>
 );
