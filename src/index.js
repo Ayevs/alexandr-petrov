@@ -8,10 +8,10 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/alexandr-petrov">
     <Routes>
-      <Route path="/alexandr-petrov" element={<App />} />
-      <Route path="/alexandr-petrov/Projects" element={<Projects />} />
+      <Route path="/" element={<App />} />
+      <Route path="/projects" element={<Projects />} />
     </Routes>
   </BrowserRouter>
 );
