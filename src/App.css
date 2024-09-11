@@ -53,3 +53,9 @@
 .App-Div {
   padding: 20px;
 }
+
+body{
+  cursor: url('../cursor/normal\ select.cur'), auto;
+  cursor: url('../cursor/unavailable\ select.ani'), none;
+  cursor: url('../cursor/diagonal\ 1\ select.ani'), pointer;
+}
