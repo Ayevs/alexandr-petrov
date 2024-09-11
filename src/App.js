@@ -8,9 +8,9 @@ function App() {
       <div className="App-Div">
         <h2>Welcome to my first website i've created for myself.</h2>
         <p>
-          Im a soon to be 20 year old dev who has some experience in web dev/
-          object oriented programming and mobile development, as well as a
-          couple other things.
+          Im a 20 year old dev who has some experience in web dev/ object
+          oriented programming and mobile development, as well as a couple other
+          things.
         </p>
         <p>
           Im still working on developing this website, but due to my spontaneous
