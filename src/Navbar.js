@@ -13,7 +13,7 @@ export default function Navbar() {
           <a className="Nav-Button" href="/alexandr-petrov">
             HOME
           </a>
-          <a className="Nav-Button" href="/alexandr-petrov/projects">
+          <a className="Nav-Button select" href="/alexandr-petrov/projects">
             PROJECTS
           </a>
           <a className="Nav-Button" href="https://discord.gg/RHRXHdqWEt">
