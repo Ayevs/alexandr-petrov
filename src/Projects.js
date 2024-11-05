@@ -9,56 +9,53 @@ import { Galleria } from "primereact/galleria";
 import Navbar from "./Navbar";
 
 function Projects() {
-  const [images, setImages] = useState(null);
-
-  const responsiveOptions = [
-    { breakpoint: "991px", numVisible: 4 },
-    { breakpoint: "767px", numVisible: 3 },
-    { breakpoint: "575px", numVisible: 1 },
-  ];
+  const [images, setImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null); //tracks what image is selected
 
   useEffect(() => {
     const importAll = (r) => {
-      const images = r.keys().map((item) => ({
+      return r.keys().map((item) => ({
         src: r(item),
         alt: item.replace("./", ""),
       }));
-      console.log(images);
-      return images;
     };
     const imageContext = require.context(
       "../images",
       false,
       /\.(png|jpe?g|svg)$/
     );
-    const loadedImages = importAll(imageContext);
-    setImages(loadedImages);
+    setImages(importAll(imageContext));
   }, []);
 
-  const itemTemplate = (item) => (
-    <img src={item.src} alt={item.alt} style={{ width: "90%" }} />
-  );
+  const handleClick = (image) => {
+    setSelectedImage(image);
+  };
 
-  const thumbnailTemplate = (item) => (
-    <img src={item.src} alt={item.alt} style={{ width: "100%" }} />
-  );
-
+  const closeImage = () => {
+    setSelectedImage(null); //closes the image
+  };
   return (
     <div className="App">
       <Navbar />
       <p className="text-2xl font-semibold font-semibold ">20XX</p>
-      {images && (
-        <div className="custom-galleria-container">
-          <Galleria
-            value={images}
-            responsiveOptions={responsiveOptions}
-            numVisible={5}
-            item={itemTemplate}
-            thumbnail={thumbnailTemplate}
-            showThumbnails={false}
-            // showItemNavigators
-            autoPlay
-            circular
+      <div className="gallery-grid select">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            className="gallery-image"
+            onClick={() => handleClick(image)}
+          />
+        ))}
+      </div>
+      {/* overlay for fullscreened pictures */}
+      {selectedImage && (
+        <div className="image-overlay" onClick={closeImage}>
+          <img
+            src={selectedImage.src}
+            alt={selectedImage.alt}
+            className="enlarged-image"
           />
         </div>
       )}

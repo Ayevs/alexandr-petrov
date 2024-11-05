@@ -1,18 +1,6 @@
 .App {
   text-align: center;
 }
-.custom-galleria-container {
-  max-width: 40lvw;
-  max-height: 20lvh;
-  margin: 0 auto;
-}
-
-.custom-galleria-item {
-  height: 100lvh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .Main-Nav {
   /* background-image: linear-gradient(to bottom right,#634A8C, #CE0B5F ); */
   display: flex;
@@ -74,4 +62,41 @@ html, body {
 
 .select {
   cursor: url('data:image/x-icon;base64,AAACAAEAICAQAAoAAgDoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAABwf6AP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAREREREREREQAAAAABEQAREREREREREQAAAAAAAAEQEQAAAAAAEREBEAAAAAAAARECIiIiIBERAQAAAAAAAREQIiIiIiIBERAAAAAAAAERECIiIiIiAREAAAAAAAABEQIiIiIiIiAREAAAAAAAERECIiIiIiIgEREQAAAAEREQIiIiIiIiIBEQABAAAAERECIiIiIiIiAREREAAQABEQIgIiIiIiIgERAAAAEAARAiICIiIiIiIBEQAAABABEQIgAiIiIiAiARAAAQAREREAAQIgIgIgIgEQARAAAAARERECICICICAREREAAAABERERAiAiAiABERAAAAAAEBEREQIgIgABERAREQAAARAAARECIAAREREQAAAAAAAAABERAiAREREAEAAAAAAAABEREQIgEREQABEQAAAAABAAARECIBEAEAAAAAAAAAAQAAERAiAREAEAAAAAAAAAAAEBEQIgEBEQEAAAAAAAAAAAEREQARAAEBEAAAAAAAAAAAABEREAAQAAAAAAAAAAAAAAARABABEAAAAAAAAAAAAAAAEAAQAAEAAAAAAAAAAAAAAAAAEREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////8////wAA/4wAA//kAAJ/+AAC/+AAAf/gAAP/4AAB/8AAAH8AAAHfgAAAO4AAAfuAAAH7AAAD2AAAAz+AAAB/AAAD/oAACHzwAA//4ABv/4AA4/7wBv/+8AN//9AIv//gDp///B3///zZ///93v///8H////////////w=='), pointer;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* this is to adjust the size of the square*/
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery-image {
+ width: 100%;
+ height: auto;
+ aspect-ratio: 1 / 1; /*makes the images appear square*/
+ object-fit: cover; /*fills the square area*/
+ transition: transform 0.3 ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05); /*slight zoom effect on hover*/
+}
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rbga(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.enlarged-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
 }
