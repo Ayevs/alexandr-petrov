@@ -2,12 +2,14 @@ import "./App.css";
 import { useState } from "react";
 import logo from "./eva_pattern_black_symetrical.png";
 import gif from "./Comp 1.gif";
+import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  const location = useLocation();
   return (
     <nav className="Main-Nav">
       <>
-        {window.location.pathname === "/alexandr-petrov/projects" ? (
+        {location.pathname === "/alexandr-petrov/projects" ? (
           <a className="gif-name" href="/alexandr-petrov">
             <img src={gif} />
           </a>
