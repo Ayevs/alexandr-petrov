@@ -29,6 +29,10 @@
   font-size: 20px;
   background-color: transparent;
 }
+.gif-name {
+  /* margin-left: 5vw; */
+  margin-bottom: -1vh;
+}
 .Main-Nav a:hover {
   color: #69a4c9;
 }
@@ -88,7 +92,7 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rbga(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,5 +102,6 @@ html, body {
   max-width: 90%;
   max-height: 90%;
   object-fit: contain;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+  /* box-shadow: 0px 4px 15px rgba(0,0,0,0.5); */
+  
 }

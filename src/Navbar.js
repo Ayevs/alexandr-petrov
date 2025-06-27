@@ -1,13 +1,22 @@
 import "./App.css";
 import { useState } from "react";
 import logo from "./eva_pattern_black_symetrical.png";
+import gif from "./Comp 1.gif";
 
 export default function Navbar() {
   return (
     <nav className="Main-Nav">
-      <a href="/alexandr-petrov">
-        <img src={logo} />
-      </a>
+      <>
+        {window.location.pathname === "/alexandr-petrov/projects" ? (
+          <a className="gif-name" href="/alexandr-petrov">
+            <img src={gif} />
+          </a>
+        ) : (
+          <a href="/alexandr-petrov">
+            <img src={logo} />
+          </a>
+        )}
+      </>
       <ul>
         <li>
           <a className="Nav-Button" href="/alexandr-petrov">
