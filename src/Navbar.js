@@ -8,7 +8,7 @@ export default function Navbar() {
   const location = useLocation();
   return (
     <nav className="Main-Nav">
-      {location.pathname === "/alexandr-petrov/projects" ? (
+      {/* {location.pathname === "/alexandr-petrov/projects" ? (
         <a className="gif-name" href="/alexandr-petrov">
           <img src={gif} />
         </a>
@@ -16,7 +16,7 @@ export default function Navbar() {
         <a href="/alexandr-petrov">
           <img src={logo} />
         </a>
-      )}
+      )} */}
       <ul>
         <li>
           <a className="Nav-Button" href="/alexandr-petrov">
