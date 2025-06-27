@@ -8,17 +8,15 @@ export default function Navbar() {
   const location = useLocation();
   return (
     <nav className="Main-Nav">
-      <>
-        {location.pathname === "/alexandr-petrov/projects" ? (
-          <a className="gif-name" href="/alexandr-petrov">
-            <img src={gif} />
-          </a>
-        ) : (
-          <a href="/alexandr-petrov">
-            <img src={logo} />
-          </a>
-        )}
-      </>
+      {location.pathname === "/alexandr-petrov/projects" ? (
+        <a className="gif-name" href="/alexandr-petrov">
+          <img src={gif} />
+        </a>
+      ) : (
+        <a href="/alexandr-petrov">
+          <img src={logo} />
+        </a>
+      )}
       <ul>
         <li>
           <a className="Nav-Button" href="/alexandr-petrov">
