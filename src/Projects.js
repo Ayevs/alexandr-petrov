@@ -3,9 +3,7 @@ import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
-import { Button } from "primereact/button";
 import { useEffect, useState } from "react";
-import { Galleria } from "primereact/galleria";
 import Navbar from "./Navbar";
 
 function Projects() {

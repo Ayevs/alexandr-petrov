@@ -1,5 +1,4 @@
 import "./App.css";
-import { useState } from "react";
 import logo from "./eva_pattern_black_symetrical.png";
 import gif from "./Comp1.gif";
 import { useLocation } from "react-router-dom";
@@ -10,11 +9,11 @@ export default function Navbar() {
     <nav className="Main-Nav">
       {location.pathname === "/alexandr-petrov/projects" ? (
         <a className="gif-name" href="/alexandr-petrov">
-          <img src={gif} />
+          <img src={gif} alt="Animated logo" />
         </a>
       ) : (
         <a href="/alexandr-petrov">
-          <img src={logo} />
+          <img src={logo} alt="Static logo" />
         </a>
       )}
       <ul>
