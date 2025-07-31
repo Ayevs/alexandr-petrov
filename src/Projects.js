@@ -18,13 +18,11 @@ function Projects() {
       }));
     };
     const imageContext = require.context(
-      "./images",
+      "./simages",
       false,
       /\.(png|jpe?g|svg)$/
     );
-    const loadedImages = importAll(imageContext);
-    console.log("loaded images:", loadedImages);
-    setImages(loadedImages);
+    setImages(importAll(imageContext));
   }, []);
 
   const handleClick = (image) => {

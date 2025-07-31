@@ -1,29 +1,29 @@
 import "./App.css";
 import logo from "./eva_pattern_black_symetrical.png";
 import gif from "./Comp1.gif";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const location = useLocation();
   return (
     <nav className="Main-Nav">
       {location.pathname === "/alexandr-petrov/projects" ? (
-        <Link className="gif-name" to="/">
+        <a className="gif-name" href="/alexandr-petrov">
           <img src={gif} alt="Animated logo" />
-        </Link>
+        </a>
       ) : (
-        <Link to="/">
+        <a href="/alexandr-petrov">
           <img src={logo} alt="Static logo" />
-        </Link>
+        </a>
       )}
       <ul>
         <li>
-          <Link className="Nav-Button" to="/">
+          <a className="Nav-Button" href="/alexandr-petrov">
             HOME
-          </Link>
-          <Link className="Nav-Button select" to="projects">
+          </a>
+          <a className="Nav-Button select" href="/alexandr-petrov/projects">
             PROJECTS
-          </Link>
+          </a>
           <a className="Nav-Button" href="https://discord.gg/RHRXHdqWEt">
             DISCORD
           </a>
