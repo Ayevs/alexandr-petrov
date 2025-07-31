@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="Main-Nav">
       {location.pathname === "/alexandr-petrov/projects" ? (
-        <Link className="gif-name" href="/alexandr-petrov">
+        <Link className="gif-name" to="/">
           <img src={gif} alt="Animated logo" />
         </Link>
       ) : (
