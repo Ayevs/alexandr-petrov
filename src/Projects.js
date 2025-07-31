@@ -35,8 +35,8 @@ function Projects() {
   return (
     <div className="App">
       <Navbar />
-      {/* <p className="text-2xl font-semibold font-semibold ">20XX</p> */}
-      {/* <div className="gallery-grid select">
+      <p className="text-2xl font-semibold font-semibold ">20XX</p>
+      <div className="gallery-grid select">
         {images.map((image, index) => (
           <img
             key={index}
@@ -46,9 +46,9 @@ function Projects() {
             onClick={() => handleClick(image)}
           />
         ))}
-      </div> */}
+      </div>
       {/* overlay for fullscreened pictures */}
-      {/* {selectedImage && (
+      {selectedImage && (
         <div className="image-overlay" onClick={closeImage}>
           <img
             src={selectedImage.src}
@@ -56,8 +56,8 @@ function Projects() {
             className="enlarged-image"
           />
         </div>
-      )} */}
-      <p>this is a test to see if it will load</p>
+      )}
+      {/* <p>this is a test to see if it will load</p> */}
     </div>
   );
 }
