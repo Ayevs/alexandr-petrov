@@ -20,14 +20,14 @@ function App() {
           If you are curious or would like to keep in touch feel free to join my
           discord server.
         </p>
-        {/* <iframe
+        <iframe
           src="https://discord.com/widget?id=1198787717459349524&theme=dark"
           width="350"
           height="500"
           allowtransparency="true"
           frameborder="0"
           sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-        ></iframe> */}
+        ></iframe>
       </div>
     </div>
   );
