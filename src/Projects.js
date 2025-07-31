@@ -18,7 +18,7 @@ function Projects() {
       }));
     };
     const imageContext = require.context(
-      "./simages",
+      "./images",
       false,
       /\.(png|jpe?g|svg)$/
     );
