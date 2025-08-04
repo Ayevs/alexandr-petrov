@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -8,13 +9,14 @@ function App() {
       <div className="App-Div">
         <h2>Welcome to my first website i've created for myself.</h2>
         <p>
-          Im a 20 year old dev who has some experience in web dev/ object
+          Im a 21 year old dev who has some experience in web dev/ object
           oriented programming and mobile development, as well as a couple other
           things.
         </p>
         <p>
           Im still working on developing this website, but due to my spontaneous
-          style of working it will probably take a bit
+          style of working it will probably take a bit, but the goal is to have
+          it be as a sort of portfolio project website for myself.
         </p>
         <p>
           If you are curious or would like to keep in touch feel free to join my
@@ -29,6 +31,7 @@ function App() {
           sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         ></iframe> */}
       </div>
+      <Footer />
     </div>
   );
 }

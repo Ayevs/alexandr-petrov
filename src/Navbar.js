@@ -7,7 +7,7 @@ export default function Navbar() {
   const location = useLocation();
   return (
     <nav className="Main-Nav">
-      {location.pathname === "/alexandr-petrov/projects" ? (
+      {location.pathname === "/projects" ? (
         <Link className="gif-name" to="/">
           <img src={gif} alt="Animated logo" />
         </Link>
@@ -16,6 +16,7 @@ export default function Navbar() {
           <img src={logo} alt="Static logo" />
         </Link>
       )}
+      {console.log(location.pathname)}
       <ul>
         <li>
           <Link className="Nav-Button" to="/">

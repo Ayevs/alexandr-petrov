@@ -42,6 +42,7 @@ function Projects() {
             key={index}
             src={image.src}
             alt={image.alt}
+            loading="lazy"
             className="gallery-image"
             onClick={() => handleClick(image)}
           />
