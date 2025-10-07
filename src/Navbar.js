@@ -23,7 +23,7 @@ export default function Navbar() {
             HOME
           </Link>
           <Link className="Nav-Button select" to="/projects">
-            PROJECTS
+            VISUAL PROJECTS
           </Link>
           <a className="Nav-Button" href="https://discord.gg/RHRXHdqWEt">
             DISCORD

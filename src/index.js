@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Projects from "./Projects";
+import Seats from "./Seats";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -12,6 +13,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/projects" element={<Projects />} />
+      <Route path="/tables" element={<Seats />} />
     </Routes>
   </BrowserRouter>
 );
