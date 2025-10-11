@@ -1,13 +1,14 @@
 import "../App.css";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+import ASCIIText from "../cool-components/ASCIIText";
 
 function NotFound() {
   return (
     <div>
       <Navbar />
       <div className="App">
-        <h1 className="text-2xl font-semibold font-bold ">404</h1>
+        <ASCIIText text="404" enableWaves={true} asciiFontSize={7} />
       </div>
       <Footer />
     </div>
