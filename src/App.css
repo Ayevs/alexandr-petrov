@@ -81,6 +81,8 @@ html, body {
  aspect-ratio: 1 / 1; /*makes the images appear square*/
  object-fit: cover; /*fills the square area*/
  transition: transform 0.3 ease;
+   z-index: -1;
+
 }
 
 .gallery-image:hover {

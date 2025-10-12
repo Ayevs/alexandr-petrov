@@ -5,6 +5,8 @@ import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 import { useEffect, useState } from "react";
 import Navbar from "../Navbar";
+import PixelCard from "../cool-components/PixelCard";
+import DecryptedText from "../cool-components/DecryptedText";
 
 function Projects() {
   const [images, setImages] = useState([]);
@@ -45,21 +47,32 @@ function Projects() {
   return (
     <div className="App">
       <Navbar />
-      <p className="text-2xl font-semibold">20XX</p>
+      <p className="text-2xl font-semibold">
+        <DecryptedText
+          text="20XX"
+          maxIterations={10}
+          sequential={true}
+          revealDirection="both"
+          animateOn="view"
+          speed={90}
+        />
+      </p>
+
       <div className="gallery-grid">
         {images.map((img, i) => (
-          <img
-            key={i}
-            src={img.thumb || img.src}
-            data-full={img.src}
-            alt={img.name || `image-${i}`}
-            loading="lazy"
-            decoding="async"
-            width={300}
-            height={300}
-            className="gallery-image"
-            onClick={() => handleClick(img)}
-          />
+          <PixelCard key={img.name || i} className="gallery-item">
+            <img
+              src={img.thumb || img.src}
+              data-full={img.src}
+              alt={img.name || `image-${i}`}
+              loading="lazy"
+              decoding="async"
+              width={300}
+              height={300}
+              className="gallery-image"
+              onClick={() => handleClick(img)}
+            />
+          </PixelCard>
         ))}
       </div>
 
