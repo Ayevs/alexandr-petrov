@@ -12,31 +12,61 @@ function Projects() {
   const [images, setImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // useEffect(() => {
+  //   // import all image files from src/images
+  //   const ctx = require.context("../images", false, /\.(jpe?g|png|webp|svg)$/i);
+  //   const keys = ctx.keys();
+  //   const map = {}; // key: baseName (without .thumb and extension)
+
+  //   keys.forEach((key) => {
+  //     const fileName = key.replace("./", ""); // e.g. "photo.thumb.jpg" or "photo.jpg"
+  //     const isThumb = /\.thumb\.[^.]+$/i.test(fileName);
+  //     // baseId = filename without ".thumb" and without extension, e.g. "photo"
+  //     const baseId = fileName
+  //       .replace(/\.thumb(?=\.)/i, "") // remove ".thumb" token if present
+  //       .replace(/\.[^.]+$/i, ""); // remove extension
+  //     map[baseId] = map[baseId] || {};
+  //     if (isThumb) {
+  //       map[baseId].thumb = ctx(key);
+  //     } else {
+  //       map[baseId].src = ctx(key);
+  //     }
+  //     // store original filename for alt text if you want
+  //     map[baseId].name =
+  //       map[baseId].name || fileName.replace(/\.thumb(?=\.)/i, "");
+  //   });
+
+  //   const arr = Object.values(map).filter((item) => item.src); // keep entries that have full image
+  //   setImages(arr);
+  // }, []);
+
+
+  //new use effect cause of vite
   useEffect(() => {
-    // import all image files from src/images
-    const ctx = require.context("../images", false, /\.(jpe?g|png|webp|svg)$/i);
-    const keys = ctx.keys();
-    const map = {}; // key: baseName (without .thumb and extension)
+    const modules = import.meta.glob("../images/*.{jpeg,jpg,png,webp,svg}", { eager: true });
 
-    keys.forEach((key) => {
-      const fileName = key.replace("./", ""); // e.g. "photo.thumb.jpg" or "photo.jpg"
+    const map = {};
+
+    Object.keys(modules).forEach((path) => {
+      const fileName = path.split('/').pop();
       const isThumb = /\.thumb\.[^.]+$/i.test(fileName);
-      // baseId = filename without ".thumb" and without extension, e.g. "photo"
-      const baseId = fileName
-        .replace(/\.thumb(?=\.)/i, "") // remove ".thumb" token if present
-        .replace(/\.[^.]+$/i, ""); // remove extension
-      map[baseId] = map[baseId] || {};
-      if (isThumb) {
-        map[baseId].thumb = ctx(key);
-      } else {
-        map[baseId].src = ctx(key);
-      }
-      // store original filename for alt text if you want
-      map[baseId].name =
-        map[baseId].name || fileName.replace(/\.thumb(?=\.)/i, "");
-    });
 
-    const arr = Object.values(map).filter((item) => item.src); // keep entries that have full image
+      const baseId = fileName.replace(/\.thumb(?=\.)/i, "").replace(/\.[^.]+$/i, "");
+
+      map[baseId] = map[baseId] || {};
+
+      const assetUrl = modules[path].default;
+
+      if (isThumb) {
+        map[baseId].thumb = assetUrl;
+      } else {
+        map[baseId].src = assetUrl;
+      }
+
+      map[baseId].name = map[baseId].name || fileName.replace(/\.thumb(?=\.)/i, "");
+    });
+    
+    const arr = Object.values(map).filter((item) => item.src);
     setImages(arr);
   }, []);
 

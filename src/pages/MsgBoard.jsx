@@ -1,16 +1,16 @@
 import "../App.css";
 
-function Seats() {
+function MsgBoard() {
   const test = "this is test";
 
   return (
     <div className="App">
       <p className="text-2xl font-semibold font-semibold ">
-        Seat arrangement tool
+        MsgBoard test
       </p>
       <p>WIP</p>
     </div>
   );
 }
 
-export default Seats;
+export default MsgBoard;

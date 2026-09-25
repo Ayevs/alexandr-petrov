@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./pages/App";
 import reportWebVitals from "./reportWebVitals";
 import Projects from "./pages/Projects";
-import Seats from "./pages/Seats";
+import MsgBoard from "./pages/MsgBoard";
 import NotFound from "./pages/404";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
@@ -15,7 +15,7 @@ root.render(
       <Route path="*" element={<NotFound />} />
       <Route path="/" element={<App />} />
       <Route path="/projects" element={<Projects />} />
-      <Route path="/tables" element={<Seats />} />
+      <Route path="/msgboard" element={<MsgBoard />} />
     </Routes>
   </BrowserRouter>
 );
